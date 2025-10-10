@@ -9,45 +9,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/bsim_hw_models/nrf_hw_models" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/crypto/mbedtls" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/crypto/tinycrypt" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/debug/mipi-sys-t" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/debug/percepio" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/debug/segger" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/fs/fatfs" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/fs/littlefs" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/ambiq" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/atmel" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/cmsis" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/espressif" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/ethos_u" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/gigadevice" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/intel" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/libmetal" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/nordic" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/nuvoton" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/quicklogic" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/renesas" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/rpi_pico" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/stm32" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/telink" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/hal/wurthelektronik" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/acpica" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/canopennode" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/cmsis-dsp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/cmsis-nn" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/gui/lvgl" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/liblc3" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/nanopb" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/open-amp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/picolibc" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/uoscore-uedhoc" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/lib/zcbor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/msgs/zmk-studio-messages" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/modules/tee/tf-a/trusted-firmware-a" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/zephyr" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/zmk" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/zmk-locales" vcs="Git" />
   </component>
 </project>
