@@ -33,7 +33,7 @@
    // Activate DEV layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        dev_layer {
+        dev_conditional {
             if-layers = <LOWER RAISE>;
             then-layer = <DEV>;
         };
