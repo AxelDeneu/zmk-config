@@ -13,19 +13,29 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <locale/keys_fr.h>
 
+// Additional FR_ definitions for programming symbols
+#define FR_DOT &kp FR_PERIOD          // Point (.)
+#define FR_DOLLAR &kp FR_RBKT          // Dollar ($)
+#define FR_SLASH &kp LS(FR_PERIOD)     // Slash (/)
+#define FR_QMARK &kp LS(FR_M)          // Question (?)
+#define FR_GRAVE &kp RA(FR_N7)         // Backtick (`)
+#define FR_TILDE &kp RA(FR_N2)         // Tilde (~)
+#define FR_PIPE &kp RA(FR_N6)          // Pipe (|)
+
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define DEV 4
 
 / {
 
-   // Activate ADJUST layer by pressing raise and lower
+   // Activate DEV layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        adjust_layer {
+        dev_layer {
             if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
+            then-layer = <DEV>;
         };
     };
 
@@ -54,13 +64,13 @@
         lower_layer {
             display-name = "symboles";
 // ------------------------------------------------------------------------------------------------------------
-// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  | ADJUST|
 // |   ²   |  &  |  é  |  "   |  '   |  (   |                   |  -   |  è    |  _    |  ç   |   à   |  F12  |
 // |       |  !  |  @  |  #   |  €   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   °   |
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  <    |  >   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
+&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &mo ADJUST
 &kp FR_SQUARE &kp FR_N1    &kp FR_N2      &kp FR_N3    &kp FR_N4    &kp FR_N5      &kp FR_N6    &kp FR_N7      &kp FR_N8    &kp FR_N9        &kp FR_N0      &kp F12
 &trans    &kp FR_EXCL &kp FR_AT &kp FR_HASH &kp FR_EURO &kp FR_PERCENT                 &kp FR_CARET &kp FR_AMPS &kp FR_ASTRK &kp FR_LPAR &kp FR_RPAR &kp FR_DEGREE
 &trans    &kp FR_EQUAL &kp FR_MINUS &kp FR_PLUS &kp FR_LBRC &kp FR_RBRC &trans &trans  &kp FR_LBKT &kp FR_RBKT &kp FR_LT &kp FR_GT &kp FR_BSLH &trans
@@ -104,6 +114,25 @@
 &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
                                   &none           &none           &none           &none            &none           &none  &none &none &none &none
             >;
+        };
+
+        dev_layer {
+            display-name = "DEV";
+// ------------------------------------------------------------------------------------------------------------
+// |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
+// |  TAB  |  "  |  '  |  /   |  \   |  |   |                   |  {   |  }    |  [    |  ]   |   ?   | BKSPC |
+// |  ESC  |  .  |  ,  |  ;   |  :   |  =   |                   |  <   |  >    |  -    |  _   |   +   |   `   |
+// | SHIFT |  => |  -> |  <?  |  ?>  |  /*  |        |  |       |  */ |  //   | ...  |  ::  |   !=  | SHIFT |
+//               |     |      |      |      |        |  |       |      |       |       |      |
+            bindings = <
+&kp FR_GRAVE  &kp FR_EXCL   &kp FR_AT     &kp FR_HASH  &kp FR_DOLLAR &kp FR_PERCENT                &kp FR_CARET &kp FR_AMPS  &kp FR_ASTRK &kp FR_LPAR  &kp FR_RPAR   &kp FR_TILDE
+&kp TAB       &kp FR_DQT    &kp FR_APOS   &kp FR_SLASH &kp FR_BSLH   &kp FR_PIPE                   &kp FR_LBRC  &kp FR_RBRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_QMARK  &kp BSPC
+&kp ESC       &kp FR_DOT    &kp FR_COMMA  &kp FR_SEMI  &kp FR_COLON  &kp FR_EQUAL                  &kp FR_LT    &kp FR_GT    &kp FR_MINUS &kp FR_UNDER &kp FR_PLUS   &kp FR_GRAVE
+&kp LSHFT     &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans       &trans       &trans        &kp RSHFT
+              &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
     };
