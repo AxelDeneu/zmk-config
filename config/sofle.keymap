@@ -18,7 +18,7 @@
 #define FR_DOLLAR &kp FR_RBKT          // Dollar ($)
 #define FR_SLASH &kp LS(FR_PERIOD)     // Slash (/)
 #define FR_QMARK &kp LS(FR_M)          // Question (?)
-#define FR_GRAVE &kp RA(FR_N7)         // Backtick (`)
+#define FR_GRAVE &kp RA(FR_E_GRAVE)    // Backtick (`)
 #define FR_TILDE &kp RA(FR_N2)         // Tilde (~)
 #define FR_PIPE &kp RA(FR_N6)          // Pipe (|)
 
@@ -125,9 +125,9 @@
 // | SHIFT |  => |  -> |  <?  |  ?>  |  /*  |        |  |       |  */ |  //   | ...  |  ::  |   !=  | SHIFT |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-&kp FR_GRAVE  &kp FR_EXCL   &kp FR_AT     &kp FR_HASH  &kp FR_DOLLAR &kp FR_PERCENT                &kp FR_CARET &kp FR_AMPS  &kp FR_ASTRK &kp FR_LPAR  &kp FR_RPAR   &kp FR_TILDE
-&kp TAB       &kp FR_DQT    &kp FR_APOS   &kp FR_SLASH &kp FR_BSLH   &kp FR_PIPE                   &kp FR_LBRC  &kp FR_RBRC  &kp FR_LBKT  &kp FR_RBKT  &kp FR_QMARK  &kp BSPC
-&kp ESC       &kp FR_DOT    &kp FR_COMMA  &kp FR_SEMI  &kp FR_COLON  &kp FR_EQUAL                  &kp FR_LT    &kp FR_GT    &kp FR_MINUS &kp FR_UNDER &kp FR_PLUS   &kp FR_GRAVE
+FR_GRAVE      &kp FR_EXCL   &kp FR_AT     &kp FR_HASH  FR_DOLLAR     &kp FR_PERCENT                &kp FR_CARET &kp FR_AMPS  &kp FR_ASTRK &kp FR_LPAR  &kp FR_RPAR   FR_TILDE
+&kp TAB       &kp FR_DQT    &kp FR_APOS   FR_SLASH     &kp FR_BSLH   FR_PIPE                       &kp FR_LBRC  &kp FR_RBRC  &kp FR_LBKT  &kp FR_RBKT  FR_QMARK      &kp BSPC
+&kp ESC       FR_DOT        &kp FR_COMMA  &kp FR_SEMI  &kp FR_COLON  &kp FR_EQUAL                  &kp FR_LT    &kp FR_GT    &kp FR_MINUS &kp FR_UNDER &kp FR_PLUS   FR_GRAVE
 &kp LSHFT     &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans       &trans       &trans        &kp RSHFT
               &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans
             >;
