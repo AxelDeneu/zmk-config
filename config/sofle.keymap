@@ -15,7 +15,7 @@
 
 // Additional FR_ definitions for programming symbols
 #define FR_DOT &kp FR_PERIOD          // Point (.)
-#define FR_DOLLAR &kp FR_RBKT          // Dollar ($)
+#define FR_DOLLAR &kp RBKT             // Dollar ($) - physical key position
 #define FR_SLASH &kp LS(FR_PERIOD)     // Slash (/)
 #define FR_QMARK &kp LS(FR_M)          // Question (?)
 #define FR_GRAVE &kp RA(FR_E_GRAVE)    // Backtick (`)
