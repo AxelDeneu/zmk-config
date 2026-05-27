@@ -43,15 +43,15 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "AZERTY";
+            display-name = "main";
 // ------------------------------------------------------------------------------------------------------------
-// |   ²   |  &  |  é  |  "   |  '   |  (   |                   |  -   |  è    |  _    |  ç   |   à   |       |
+// |   ~   |  &  |  é  |  "   |  '   |  (   |                   |  -   |  è    |  _    |  ç   |   à   |       |
 // |  ESC  |  A  |  Z  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
 // |  TAB  |  Q  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   M   |   ù   |
 // | SHIFT |  W  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  ,    |  ;    |  :   |   !   | SHIFT |
 //               | CTRL| ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| GUI   | ALT   | CTRL |
             bindings = <
-&kp FR_SQUARE &kp FR_AMPS    &kp FR_E_ACUTE &kp FR_DQT   &kp FR_APOS  &kp FR_LPAR                      &kp FR_MINUS &kp FR_E_GRAVE &kp FR_UNDER  &kp FR_C_CEDILLA &kp FR_A_GRAVE &none
+&kp FR_TILDE &kp FR_AMPS    &kp FR_E_ACUTE &kp FR_DQT   &kp FR_APOS  &kp FR_LPAR                      &kp FR_MINUS &kp FR_E_GRAVE &kp FR_UNDER  &kp FR_C_CEDILLA &kp FR_A_GRAVE &none
 &kp ESC       &kp FR_A       &kp FR_Z       &kp FR_E     &kp FR_R     &kp FR_T                         &kp FR_Y     &kp FR_U       &kp FR_I      &kp FR_O         &kp FR_P       &kp BSPC
 &kp TAB       &kp FR_Q       &kp FR_S       &kp FR_D     &kp FR_F     &kp FR_G                         &kp FR_H     &kp FR_J       &kp FR_K      &kp FR_L         &kp FR_M       &kp FR_U_GRAVE
 &kp LSHFT     &kp FR_W       &kp FR_X       &kp FR_C     &kp FR_V     &kp FR_B  &kp C_MUTE &none       &kp FR_N     &kp FR_COMMA   &kp FR_SEMI   &kp FR_COLON     &kp FR_EXCL    &kp RSHFT
@@ -62,17 +62,17 @@
         };
 
         lower_layer {
-            display-name = "symboles";
+            display-name = "special";
 // ------------------------------------------------------------------------------------------------------------
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  | ADJUST|
-// |   ²   |  &  |  é  |  "   |  '   |  (   |                   |  -   |  è    |  _    |  ç   |   à   |  F12  |
-// |       |  !  |  @  |  #   |  €   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   °   |
+// |   ~   |  &  |  é  |  "   |  '   |  (   |                   |  -   |  è    |  _    |  ç   |   à   |  F12  |
+// |       |  !  |  @  |  #   |  €   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  <    |  >   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
 &trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &mo ADJUST
-&kp FR_SQUARE &kp FR_N1    &kp FR_N2      &kp FR_N3    &kp FR_N4    &kp FR_N5      &kp FR_N6    &kp FR_N7      &kp FR_N8    &kp FR_N9        &kp FR_N0      &kp F12
-&trans    &kp FR_EXCL &kp FR_AT &kp FR_HASH &kp FR_EURO &kp FR_PERCENT                 &kp FR_CARET &kp FR_AMPS &kp FR_ASTRK &kp FR_LPAR &kp FR_RPAR &kp FR_DEGREE
+&kp FR_TILDE &kp FR_N1    &kp FR_N2      &kp FR_N3    &kp FR_N4    &kp FR_N5      &kp FR_N6    &kp FR_N7      &kp FR_N8    &kp FR_N9        &kp FR_N0      &kp F12
+&trans    &kp FR_EXCL &kp FR_AT &kp FR_HASH &kp FR_EURO &kp FR_PERCENT                 &kp FR_CARET &kp FR_AMPS &kp FR_ASTRK &kp FR_LPAR &kp FR_RPAR &kp FR_PIPE
 &trans    &kp FR_EQUAL &kp FR_MINUS &kp FR_PLUS &kp FR_LBRC &kp FR_RBRC &trans &trans  &kp FR_LBKT &kp FR_RBKT &kp FR_LT &kp FR_GT &kp FR_BSLH &trans
                     &trans    &trans      &trans    &trans     &trans &trans  &trans    &trans   &trans    &trans
             >;
