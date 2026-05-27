@@ -13,14 +13,17 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <locale/keys_fr.h>
 
-// Additional FR_ definitions for programming symbols
-#define FR_DOT &kp FR_PERIOD          // Point (.)
-#define FR_DOLLAR &kp RBKT             // Dollar ($) - physical key position
-#define FR_SLASH &kp LS(FR_PERIOD)     // Slash (/)
-#define FR_QMARK &kp LS(FR_M)          // Question (?)
-#define FR_GRAVE &kp RA(FR_E_GRAVE)    // Backtick (`)
-#define FR_TILDE &kp RA(FR_N2)         // Tilde (~)
-#define FR_PIPE &kp RA(FR_N6)          // Pipe (|)
+// DEV layer convenience bindings. Named with DEV_ prefix so they do
+// not shadow FR_TILDE / FR_PIPE / FR_GRAVE / FR_DOLLAR / FR_SLASH /
+// FR_QMARK keycodes from <locale/keys_fr.h>, which are used with &kp
+// in the base and lower layers below.
+#define DEV_DOT &kp FR_PERIOD          // Point (.)
+#define DEV_DOLLAR &kp RBKT            // Dollar ($) - physical key position
+#define DEV_SLASH &kp LS(FR_PERIOD)    // Slash (/)
+#define DEV_QMARK &kp LS(FR_M)         // Question (?)
+#define DEV_GRAVE &kp RA(FR_E_GRAVE)   // Backtick (`)
+#define DEV_TILDE &kp RA(FR_N2)        // Tilde (~)
+#define DEV_PIPE &kp RA(FR_N6)         // Pipe (|)
 
 #define BASE 0
 #define LOWER 1
@@ -125,9 +128,9 @@
 // | SHIFT |  => |  -> |  <?  |  ?>  |  /*  |        |  |       |  */ |  //   | ...  |  ::  |   !=  | SHIFT |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-FR_GRAVE      &kp FR_EXCL   &kp FR_AT     &kp FR_HASH  FR_DOLLAR     &kp FR_PERCENT                &kp FR_CARET &kp FR_AMPS  &kp FR_ASTRK &kp FR_LPAR  &kp FR_RPAR   FR_TILDE
-&kp TAB       &kp FR_DQT    &kp FR_APOS   FR_SLASH     &kp FR_BSLH   FR_PIPE                       &kp FR_LBRC  &kp FR_RBRC  &kp FR_LBKT  &kp FR_RBKT  FR_QMARK      &kp BSPC
-&kp ESC       FR_DOT        &kp FR_COMMA  &kp FR_SEMI  &kp FR_COLON  &kp FR_EQUAL                  &kp FR_LT    &kp FR_GT    &kp FR_MINUS &kp FR_UNDER &kp FR_PLUS   FR_GRAVE
+DEV_GRAVE     &kp FR_EXCL   &kp FR_AT     &kp FR_HASH  DEV_DOLLAR    &kp FR_PERCENT                &kp FR_CARET &kp FR_AMPS  &kp FR_ASTRK &kp FR_LPAR  &kp FR_RPAR   DEV_TILDE
+&kp TAB       &kp FR_DQT    &kp FR_APOS   DEV_SLASH    &kp FR_BSLH   DEV_PIPE                      &kp FR_LBRC  &kp FR_RBRC  &kp FR_LBKT  &kp FR_RBKT  DEV_QMARK     &kp BSPC
+&kp ESC       DEV_DOT       &kp FR_COMMA  &kp FR_SEMI  &kp FR_COLON  &kp FR_EQUAL                  &kp FR_LT    &kp FR_GT    &kp FR_MINUS &kp FR_UNDER &kp FR_PLUS   DEV_GRAVE
 &kp LSHFT     &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans       &trans       &trans        &kp RSHFT
               &trans        &trans        &trans       &trans        &trans        &trans  &trans  &trans       &trans       &trans
             >;
