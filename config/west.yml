@@ -17,5 +17,8 @@ manifest:
     - name: zmk-locales
       remote: joelspadin
       revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
   self:
     path: config
