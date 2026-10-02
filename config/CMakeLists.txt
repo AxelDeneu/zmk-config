@@ -1,2 +1,2 @@
 # SPDX-License-Identifier: MIT
-# No custom sources needed - using built-in ZMK widgets
+# No custom sources; display widgets are provided by zmk-nice-oled.
