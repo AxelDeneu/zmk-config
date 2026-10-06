@@ -9,9 +9,11 @@ Read `README.md` for the layer map, Studio setup, builds, and hardware checks.
   BASE (0), LOWER (1), RAISE (2), ADJUST (3), DEV (4).
 - LOWER + RAISE activates DEV through `conditional_layers`. ADJUST is reached
   by holding LOWER and the top-right key; it is not a conditional layer.
-- `config/sofle.conf`: shared OLED, encoder, RGB and idle settings.
-- `config/sofle_left.conf`: central-only modifier indicators and Raw HID.
-- `config/sofle_right.conf`: peripheral-only Smart Battery animation settings.
+- `config/sofle.conf`: shared OLED, encoder and RGB settings. Automatic idle
+  and deep sleep disabled; dedicated display thread priority 10.
+- `config/sofle_left.conf`: central-only modifier indicators, Raw HID and split
+  connection latency 0 (no skipped connection events).
+- `config/sofle_right.conf`: peripheral-only Smart Battery animation and USB disabled.
 - `config/west.yml`: ZMK v0.3 and external modules pinned to commits.
 - `build.yaml`: left build with Studio USB, right build without Studio.
 - `.github/workflows/build.yml`: builds both halves using the ZMK v0.3 workflow.

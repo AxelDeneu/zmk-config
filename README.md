@@ -110,9 +110,42 @@ ZMK v0.3 ; conserver cette version lors de la compilation.
 - Réglages OLED propres à chaque moitié séparés ; Raw HID reste à gauche.
 - USB désactivé explicitement sur le périphérique pour supprimer un
   avertissement de dépendance Kconfig.
-- Suppression du délai de sommeil profond inactif. L'inactivité de l'écran
-  et du RGB reste à une minute ; le sommeil profond n'est pas activé.
+- Sommeil profond, mise en inactivité automatique et extinction de l'écran/RGB
+  pour inactivité désactivés sur les deux moitiés pour tester les blocages
+  au réveil de l'ordinateur.
+- Liaison Bluetooth entre moitiés configurée sans événements de connexion
+  sautés ; rendu OLED de priorité inférieure à la transmission des touches.
 - Versions des modules externes fixées ; instructions du dépôt actualisées.
+
+Pour désactiver l'inactivité automatique sur les deux moitiés sous ZMK v0.3,
+`CONFIG_ZMK_IDLE_TIMEOUT=2147483647` utilise la valeur maximale du compteur
+signé 32 bits : la condition de passage en inactivité ne peut pas être vraie.
+Une valeur de zéro ferait au contraire entrer immédiatement en inactivité.
+Les écrans restent actifs et le RGB ne s'éteint plus pour inactivité, ce qui augmente
+la consommation sur batterie. Le RGB garde son extinction automatique en USB.
+
+### Réactivité et liaison entre les moitiés
+
+La droite transmet ses touches à la gauche en Bluetooth, même lorsque la
+gauche est branchée en USB à l'ordinateur. La gauche demande maintenant
+`CONFIG_ZMK_SPLIT_BLE_PREF_LATENCY=0` au lieu du défaut de 30 : la droite
+participe à chaque événement de connexion. L'intervalle reste à 7,5 ms
+(`CONFIG_ZMK_SPLIT_BLE_PREF_INT=6`) et le délai de détection d'une liaison
+perdue reste à 4 secondes. Ces valeurs décrivent la connexion, pas une mesure
+de latence des touches ; le défaut de 30 ne signifie pas que chaque touche
+attendait 30 intervalles.
+
+Les deux écrans utilisent une file de travail dédiée de priorité 10 au lieu
+de 5, inférieure à celle de la transmission des touches Bluetooth. Ce réglage
+est conseillé pour privilégier la frappe dans le
+[guide du module OLED](https://github.com/mctechnology17/zmk-nice-oled/blob/46f824abb2bd41f1287c5c68abd14122af6042a3/docs/OPTIMIZE.md).
+Les écrans peuvent être moins fluides pendant une frappe rapide.
+
+Flasher **les deux moitiés** avec les nouveaux fichiers, puis comparer une
+frappe alternée gauche/droite et plusieurs cycles de veille/réveil de
+l'ordinateur. Pour isoler la liaison avec l'ordinateur, refaire le test en
+USB sur la gauche avec la sortie USB sélectionnée. Le gain de réactivité et
+la disparition des blocages restent à vérifier sur le matériel.
 
 À vérifier sur le matériel : connexion/déverrouillage Studio, caractères
 AZERTY, retour Bluetooth après sélection USB, fonctionnement des deux moitiés,
